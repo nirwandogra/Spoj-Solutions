@@ -1,0 +1,71 @@
+#include<stdio.h>
+/////#include<conio.h>
+///#include<algorithm>
+////#include<vector>
+/////using namespace std;
+int main()
+{
+    int a,b;
+     /////  freopen("C:\\Users\\admin\\Desktop\\input.txt","r",stdin);
+    scanf("%d%d",&a,&b);
+   while(a!=-1 && b!=-1)
+   {
+    int dp[100][100];int i;int j;
+    /////scanf("%d%d",&a,&b);
+    
+    //dp[1][0]=1;
+    ///dp[0][1]=1;
+   ///// memset(dp,0);
+     /*for(i=0;i<=a;i++)
+    {
+    for(j=0;j<=b;j++)        
+    {
+                             dp[i][j]=0;
+        }
+        }*/
+        dp[0][0]=1;
+    for(i=0;i<=a;i++)
+    {
+    for(j=0;j<=b;j++)        
+    {
+                              if(i==0 && j==0){dp[i][j]=1;continue;}
+    if(i==0 && j!=0)
+    {
+            dp[i][j]=dp[i][j-1];
+            continue;
+            }
+          else  if(j==0 && i!=0)
+    {
+            dp[i][j]=dp[i-1][j];
+            continue;
+        }
+           
+     dp[i][j]=dp[i-1][j]+dp[i][j-1];
+     }
+     }
+    /// printf(" sdsdsfdf    %d\n",dp[1][1]);
+    //// printf("val of dp%d\n",dp[a][b]);
+    /* for(i=0;i<=a;i++)
+    {
+    for(j=0;j<=b;j++)  
+     {
+          printf(" %d ",dp[i][j]);             
+                       }
+                       printf("\n");
+                       }
+                       */
+     if(dp[a][b]==(a+b))
+    {
+      printf("%d+%d=%d\n",a,b,(a+b));
+      }
+    else 
+    {
+         printf("%d+%d!=%d\n",a,b,(a+b));
+         }
+         scanf("%d%d",&a,&b);
+         }
+   ////getch();
+    return 0;
+    }
+
+

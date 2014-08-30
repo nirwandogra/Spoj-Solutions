@@ -1,0 +1,31 @@
+
+#include <stdio.h>
+
+int main() 
+{
+ long long int array[100000]={0};long long int sum,ans,temp,a,b ;long long int n;
+ int k;int mul=1;int x;int y;
+ int h;int test;
+  scanf("%d",&test);
+  for(h= 0; h < test; h++)
+ { 
+         sum=0;
+         ans=0;
+  scanf("%lld",&n);
+  a=3*n*n;
+  b=3*((n*(n-1))/2);
+  temp=a-b-n;
+ // printf("this is temp%lld\n",temp);
+ ans=temp%1000007;
+/* for(int i= n; i>0 ; i--)
+{     
+ sum=sum+((3*i)-1);
+  printf("sum is   %lld\n",sum);
+       ans=sum%1000007;
+             }*/
+ printf("%lld\n",ans);
+         }
+  
+     return 0;
+}
+

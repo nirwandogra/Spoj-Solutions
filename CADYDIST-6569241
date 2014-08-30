@@ -1,0 +1,82 @@
+#include <stdio.h>
+#include <stdlib.h> 
+void mergesort(long long int a[], int low, int high);
+ 
+int main(void)
+ {
+ long long int array2[100005];int n; long long int array[100005];
+ int i = 0;long long int prod;long long int sum=0;
+ 
+ /* reading the elements form the users*/
+  //printf("Enter the number of elements to be sorted:");
+  scanf("%d",&n);
+ while(n!=0)
+   {
+            sum=0;prod=1;
+            for(i = 0; i < n; i++ )
+   {
+       scanf("%lld",&array[i]);
+   }
+    mergesort(array, 0, n - 1);
+   /*for( i = 0; i < n; i++ )
+   {
+       printf("%d     ",array[i]);
+   }*/
+    for(i = 0; i < n; i++ )
+   {
+       scanf("%lld",&array2[i]);
+   }
+  mergesort(array2, 0, n - 1);
+/*for(s i = 0; i < n; i++ )
+   {
+       printf("%d      ",array2[i]);
+   }*/
+sum=0;
+ for(int j=0;j<n;j++)
+{
+        prod=(array[j]*array2[n-j-1]);
+        sum=sum+prod;
+       }
+  printf("%lld\n",sum);
+  scanf("%d",&n);
+}
+ return 0;
+}
+ 
+void mergesort(long long int a[], int low, int high) {
+ int i = 0;
+ int length = high - low + 1;
+ int pivot  = 0;
+ int merge1 = 0;
+ int merge2 = 0;
+ int working[length];
+ 
+ if(low == high)
+  return;
+ 
+ pivot  = (low + high) / 2;
+ 
+ mergesort(a, low, pivot);
+ mergesort(a, pivot + 1, high);
+  
+ for(i = 0; i < length; i++)
+  working[i] = a[low + i];
+ 
+ merge1 = 0;
+ merge2 = pivot - low + 1;
+ 
+ for(i = 0; i < length; i++) {
+  if(merge2 <= high - low)
+   if(merge1 <= pivot - low)
+    if(working[merge1] > working[merge2])
+     a[i + low] = working[merge2++];
+    else
+     a[i + low] = working[merge1++];
+   else
+    a[i + low] = working[merge2++];
+  else
+   a[i + low] = working[merge1++];
+ }
+}
+ 
+

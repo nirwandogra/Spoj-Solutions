@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    int i;int c;int b=0;
+    int a[10];int d=1;int rem=0;int len=0;int sum;
+    char n[500];int test;
+    scanf("%d",&test);
+    for(int r=0;r<test;r++)
+    {
+     sum=0;       rem=0;len=0;d=1;b=0;
+            scanf("%d %s",&c,n);
+    len=strlen(n); 
+    for(int k=1;k<=4;k++)
+    {        
+    d=d*c;
+    rem=d%10;
+    a[k]=rem;
+    }
+    a[0]=a[4];
+        for(i=0;i<len;i++)
+            {
+             sum=sum+(n[i]-'0');
+              b=(b*10+(n[i]-'0'))%4;
+              }
+             
+ if(sum==0)
+      {printf("1\n");}
+  else { printf("%d\n",a[b]);}
+}
+    return 0;   
+             
+     }   

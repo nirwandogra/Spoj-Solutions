@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+int i=0; 
+int main() 
+{
+int c;
+ char st[100000];int n;
+ int h;int test;
+  scanf("%d",&test);
+  for(h= 0; h < test; h++)
+  {  //(i==0){printf("\n%s",st[i]);continue;}
+  scanf("%d %s",&n,st);
+  c=strlen(st);
+  //printf("%d",c);
+  printf("%d ",h+1);
+  for(int i= 0; i<c; i++){if((i+1)==n){continue;}
+printf("%c",st[i]);
+  }
+printf("\n");
+   }
+   
+  return 0;
+}      

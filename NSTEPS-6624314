@@ -1,0 +1,24 @@
+#include<signal.h>
+#include <stdio.h>
+#include <stdlib.h>
+int main() 
+{
+ long long int array[100000]={0};long long int m,ans,temp;int n;
+ int k;int mul=1;int x;int y;
+ int h;int test;
+  scanf("%d",&test);
+  for(h= 0; h < test; h++)
+ { 
+  scanf("%d %d",&x,&y);
+  if(x==y) 
+  {
+           if(x%2==0){ printf("%d\n",(2*x));}
+           else {printf("%d\n",((2*x)-1));}
+         }
+         else if(y==x-2){if(x%2==0){ printf("%d\n",(y+x));} else{ printf("%d\n",(x+y-1));}}
+         else{ printf("No Number\n");}
+         }
+        
+  return 0;
+}
+

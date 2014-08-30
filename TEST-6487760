@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main()
+{int n;int flag=1;int a[1000005];int i=0;
+  while(flag!=0)
+  { scanf("%d\n",&a[i]);
+   if(a[i]==42){flag=0;}else{i++;continue;}
+}
+
+for(int j=0;j<i;j++){printf("%d\n",a[j]);}
+return 0;
+}
+
+

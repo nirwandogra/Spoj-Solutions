@@ -1,0 +1,1 @@
+main(){brk(printf("%m"));}

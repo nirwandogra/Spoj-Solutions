@@ -1,0 +1,35 @@
+#include<stdio.h>
+int main()
+{
+    int c;int a[10000]={0};
+    int k,j,i;int n=1;int b[10000]={0};
+    k=10000;int l;int test;int h;int q;
+       n=1;
+         k=10000;
+        
+    for( i=2;i<=k;i++)
+    {
+            if(a[i]!=0){continue;}
+            for(j=2;j<=k/i;j++)////////////here i is now prime ....as it is not a multiple of any number.......... 
+            {
+                      
+                          a[i*j]=a[i*j]+1;        
+            }
+                }
+                      for( q=2;q<=k;q++)
+    {
+            if(a[q]>=3)
+            {
+                        b[n]=q;n++;
+            }
+            }
+  scanf("%d",&test);
+    for( h=0;h<test;h++)
+    {        
+           scanf("%d",&l);
+          printf("%d\n",b[l]);
+          }
+    
+    return 0;
+    
+    }

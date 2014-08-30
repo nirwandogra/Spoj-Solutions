@@ -1,0 +1,41 @@
+# include <string.h> 
+# include <stdio.h>
+    int main()
+    {
+    int coloumns;int q;int d;char str[210];char str2;int n;int len;int t;
+ scanf("%d\n",&coloumns);
+while(coloumns!=0)
+       {
+                  printf("\n");
+                      n=0;d=0;
+            
+                 
+                              scanf("%s",str);
+                              d=strlen(str);
+                              d=d/coloumns;
+                  for(q=0;q<coloumns;q++)
+              {
+                
+                  len=0;
+                for(t=0;t<d;t++)
+                {
+                       if(t%2!=0)
+                      {
+                          str2=str[len+q];
+                          printf("%c",str2);
+                      //     printf("%d\n",len);
+                          len=len+(2*q)+1;                         
+                                }
+                      else 
+                   {
+                     str2=str[len+q];
+                     printf("%c",str2);
+                     len=len+(2*(coloumns-q))-1;
+                    //printf("%d\n",len);
+                    }
+                         }
+                         }
+                            scanf("%d\n",&coloumns); 
+                          }
+                        return 0;
+                          } 

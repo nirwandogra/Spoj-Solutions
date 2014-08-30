@@ -1,0 +1,40 @@
+# include <stdio.h>
+
+    int main()
+    {
+int test;int max=0;
+             int k;int i;int numbers;int d=0;
+                    int sum=0;int packets;int swap=0;
+             scanf("%d",&numbers);
+    int found;
+             int a[1000005]={0}; //////////////counting sort is a program which basically creates an accumulator array
+              for(i=0;i<numbers;i++)
+              {
+              
+                     scanf("%d",&d);           
+                 a[d]=a[d]+1;
+                 
+                 if(d>=max)
+                 {
+                              max=d;
+                 } 
+                 }                 
+                                                        
+        for(k=0;k<=max;k++)
+        {
+                           if(a[k]!=0)
+        {
+                           for(int z=0;z<a[k];z++)
+                           { 
+                                printf("%d\n",k);
+                           }
+                   }
+                    else{continue;}
+                    }
+                                                
+    
+            return 0;
+              }
+
+ 
+

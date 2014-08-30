@@ -1,0 +1,36 @@
+
+#include <stdio.h>
+ 
+int main() 
+{
+ int n;long long prod;long long sum;long long k,one,two,three;
+ 
+ 
+  n=1;
+ //////printf("enter the numbers");
+while(n>0)
+{
+           sum=0;
+           prod=1;   
+      scanf("%lld %lld %lld",&one,&two,&three);
+                    prod=one*two*three;
+                    if(one==0 && two==0 && three==0){break;}   
+                             if(one!=0){k=three*(two/one);}
+               /// printf("product is %lld\n",prod);
+               
+             //   exit();
+                    if((three-two)==(two-one))
+                    {
+                                              printf("AP %lld\n",(three+(two-one)));
+                                         continue;
+                                              }
+                                               if(prod==(two*two*two))
+                {
+                                         printf("GP %lld\n",k);
+                                         
+                                         }
+                             }                    
+                                 
+  return 0;
+}
+ 

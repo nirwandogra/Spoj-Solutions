@@ -1,0 +1,69 @@
+#include<signal.h>
+#include <stdio.h>
+#include <stdlib.h>
+void mergesort(long long int a[], int low, int high);
+int i=0; 
+int main() 
+{
+ long long int array[100000]={0};long long int min;int n;
+ int k;
+ int h;int test;
+  scanf("%d",&test);
+  for(h= 0; h < test; h++)
+ { 
+  scanf("%d %d",&n,&k);
+min=1000000001;
+ 
+   for(i = 0; i < n; i++ ){
+       scanf("%lld",&array[i]);
+   }
+ 
+ mergesort(array, 0, n - 1);
+ for(i = 0; i < n; i++)
+ {
+       if(i+k-1<n)
+       {
+       if((array[i+k-1]-array[i])<=min){min=array[i+k-1]-array[i];}
+       }
+       }
+       printf("%lld\n",min);
+       }
+  return 0;
+}
+ 
+void mergesort(long long int a[], int low, int high) {
+ i = 0;
+ int length = high - low + 1;
+ int pivot  = 0;
+ int merge1 = 0;
+ int merge2 = 0;
+ int working[length];
+ 
+ if(low == high)
+  return;
+ 
+ pivot  = (low + high) / 2;
+ 
+ mergesort(a, low, pivot);
+ mergesort(a, pivot + 1, high);
+  
+ for(i = 0; i < length; i++)
+  working[i] = a[low + i];
+ 
+ merge1 = 0;
+ merge2 = pivot - low + 1;
+ 
+ for(i = 0; i < length; i++) {
+  if(merge2 <= high - low)
+   if(merge1 <= pivot - low)
+    if(working[merge1] > working[merge2])
+     a[i + low] = working[merge2++];
+    else
+     a[i + low] = working[merge1++];
+   else
+    a[i + low] = working[merge2++];
+  else
+   a[i + low] = working[merge1++];
+ }
+}
+

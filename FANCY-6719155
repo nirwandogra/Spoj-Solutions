@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+#include <string.h>
+int main()
+ {
+   int t;int a[10000]={0};int rem=0;long long sum=0;
+   int l;int max,min;int c;long long int prod,ans,n,temp;
+    scanf("%d",&t);int d,k;int flag;
+    a[0]=1;char s[100];
+     
+     while (t--)
+      {
+       ans=1;    
+        scanf("%s",s);
+      l=strlen(s);
+      k=s[0]-'0';
+      prod=1;
+      for(int i=1;i<l;i++)
+  { 
+   d=s[i]-'0';   
+    /////  printf("k is%d\n",k);
+     ////   printf("d is%d\n",d);
+    if(d==k){prod=prod*2;flag=0;}else{k=d;ans=ans*prod;prod=1;flag=1;}  
+    //////printf("prod is %lld\n",prod);
+       }
+      if(flag==0){printf("%lld\n",(ans*prod));}
+ else   {  printf("%lld\n",ans);}
+}
+
+return 0;
+}
+

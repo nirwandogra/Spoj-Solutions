@@ -1,0 +1,37 @@
+#include<stdio.h>
+ 
+int main()
+{
+    
+    int a[200000];
+    int r=0;
+    int b[5];
+    int i;
+ 
+int k;
+int test;
+ 
+scanf("%d\n",&test);
+for(int q=0;q<test;q++)
+{
+        
+        r=0;
+for(k=0;k<3;k++)
+{
+ scanf("%d",&b[k]);
+ 
+}
+    int q=b[1];int w=b[2];
+    ///b[0]=soldiers b[1]=towers b[3]=power in each tower.....
+    for(i=0;i<b[0];i++)
+    {
+            scanf("%d",&a[i]);
+       if(a[i]%w!=0)
+            {r=r+(a[i]/w);}else{r=r+((a[i]/w)-1);}
+            }
+    if(r>=q){printf("YES\n");}
+    else{printf("NO\n");}
+}
+    
+    return 0;
+    }
